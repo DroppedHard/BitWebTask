@@ -6,10 +6,15 @@ export default class NobelStorage {
     minYear:number = Infinity
     maxYear:number = 0
     constructor() {
-        DataHandler.fetchData().then((data:Prize[]) => {
-            this.data = data
-            this.findDateRange()
-        })
+        if (this.data.length) {
+            console.log("Data was already fetched.")
+            console.log(this.data)
+        } else {
+            DataHandler.fetchData().then((data:Prize[]) => {
+                this.data = data
+                this.findDateRange()
+            })
+        }
     }
     findDateRange() {
         this.data.forEach((el:Prize) => {
