@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GetPrizes, Prize } from "../interfaces/dataInterface"
+import { GetPrizes, Prize } from "../interfaces/DataInterface"
 
 export default class DataHandler {
     static url:string = "https://api.nobelprize.org/2.1/nobelPrizes";

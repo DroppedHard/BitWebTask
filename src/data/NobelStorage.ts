@@ -1,4 +1,4 @@
-import { Prize } from "../interfaces/dataInterface";
+import { Prize } from "../interfaces/DataInterface";
 import DataHandler from "./DataHandler";
 
 export default class NobelStorage {

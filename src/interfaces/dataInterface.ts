@@ -24,3 +24,7 @@ export type GetPrizes = {
     links:any,
     meta:any,
 }
+export type ButtonFields = {
+    content:string,
+    color:string,
+}
