@@ -1,13 +1,8 @@
-import { useState } from 'react'
 import './App.css'
-import NobelStorage from './data/NobelStorage';
 import { Link, Outlet } from 'react-router-dom';
 
-function App() {
-  // const 
-  const nobelStorage:NobelStorage = new NobelStorage();
-  
 
+function App() {
   return (
     <>
     <header className='bg-primary-700 px-4 py-4'>
@@ -19,10 +14,9 @@ function App() {
         <h1 className='text-2xl'>Check out all the nobel prizes in selected year!</h1>
       </div>
     </header>
-    <div>
+    <div className='h-[85vh]'>
       <Outlet />
     </div>
-    {/* <button onClick={() => console.log(dataHandler.data)}>get data</button> */}
     </>
   )
 }

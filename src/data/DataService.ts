@@ -1,8 +1,9 @@
 import axios from "axios";
 import { GetPrizes, Prize } from "../interfaces/DataInterface"
 
-export default class DataHandler {
+export default class DataService {
     static url:string = "https://api.nobelprize.org/2.1/nobelPrizes";
+    static data:Prize[] = []
     constructor() {
     }
     static async fetchData():Promise<Prize[]> {
@@ -14,7 +15,8 @@ export default class DataHandler {
                 },
             },
         );
-        console.log(data, status)
+        this.data = data.nobelPrizes
+        // console.log(data, status)
         return data.nobelPrizes
     }
 }

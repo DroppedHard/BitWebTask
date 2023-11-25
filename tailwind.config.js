@@ -48,5 +48,10 @@ export default {
     },
   },
   plugins: [],
+  safelist: [
+    // whether I want other button background and stuff
+    {pattern:/(hover:|active:){0,1}bg-primary-[0-9]00/},
+    {pattern:/text-(black|white)/},
+  ]
 }
 
