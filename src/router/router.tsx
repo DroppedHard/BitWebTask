@@ -15,13 +15,9 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path:"/nagrody/:year",
+                path:"/nagrody/:lang/:year",
                 element:<NobelList />
             },
-            // {
-            //     path: "/nagrody/nobel/:id",
-            //     element: <NobelDetail />
-            // },
         ],
     },
     {

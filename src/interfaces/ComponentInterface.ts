@@ -8,6 +8,7 @@ export type StylizedButtonFields = {
     bgColorActive:string,
     textColor:string,
     clickHandler:MouseEventHandler<HTMLButtonElement>,
+    ifDisabled:boolean,
 }
 
 export type MultiRangedSlideFields = {

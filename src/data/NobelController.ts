@@ -1,7 +1,8 @@
-import { Prize } from "../interfaces/DataInterface";
+import { Prize, Translation, TranslationSelect } from "../interfaces/DataInterface";
 import DataService from "./DataService";
 
 export default class NobelController {
+    static lang:TranslationSelect = 'en';
     constructor() {}
     static async fetchData():Promise<Prize[]> {
         if (!DataService.data.length) {

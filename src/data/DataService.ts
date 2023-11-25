@@ -7,7 +7,7 @@ export default class DataService {
     constructor() {
     }
     static async fetchData():Promise<Prize[]> {
-        const { data, status } = await axios.get<GetPrizes>(
+        const { data } = await axios.get<GetPrizes>(
             this.url,
             {
                 headers: {
@@ -16,7 +16,6 @@ export default class DataService {
             },
         );
         this.data = data.nobelPrizes
-        // console.log(data, status)
         return data.nobelPrizes
     }
 }
