@@ -2,24 +2,29 @@ import { Prize } from "../interfaces/DataInterface";
 import DataService from "./DataService";
 
 export default class NobelController {
-    data:Prize[] = []
-    yearRange:number[] = []
     constructor() {}
-    async fetchData():Promise<Prize[]> {
-        if (!this.data.length) {
-            this.data = await DataService.fetchData()
+    static async fetchData():Promise<Prize[]> {
+        if (!DataService.data.length) {
+            await DataService.fetchData()
         }
-        return this.data
+        return DataService.data
     }
-    getYearRange():number[] {
-        this.fetchData()
+    static getYearRange():number[] {
         let minYear:number = Infinity
         let maxYear:number = 0
-        this.data.forEach((el:Prize) => {
+        DataService.data.forEach((el:Prize) => {
             minYear = Math.min(parseInt(el.awardYear), minYear)
             maxYear = Math.max(parseInt(el.awardYear), maxYear)
         })
-        this.yearRange = new Array(maxYear-minYear+1).fill(0).map((_, i) => i+minYear);
-        return this.yearRange
+        let yearRange = new Array(maxYear-minYear+1).fill(0).map((_, i) => i+minYear);
+        return yearRange
+    }
+    static getNobelsInYear(year:string):Prize[] {  //year fetched from url is string-type
+        return DataService.data.filter((el:Prize) => {
+            if (el.awardYear == year) {
+                return true
+            }
+            return false
+        })
     }
 }

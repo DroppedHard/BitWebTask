@@ -4,15 +4,14 @@ import StylizedButton from '../components/StylizedButton';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 export default function Home() {
-  const navigate:NavigateFunction = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
   const [years, setYears] = useState<number[]>([]);
   const [selected, setSelected] = useState<number>(0)
-  const nobels: NobelController = new NobelController()
 
   useEffect(() => {
     const fetchData = async () => {
-      await nobels.fetchData()
-      setYears(nobels.getYearRange())
+      await NobelController.fetchData()
+      setYears(NobelController.getYearRange())
       // console.log(years)
       setSelected(years[0])
     }
@@ -22,7 +21,7 @@ export default function Home() {
   const listNobels: MouseEventHandler<HTMLButtonElement> = () => {
     return navigate('/nagrody/' + selected)
   }
-  
+
   return (
     <>
       <div className='flex items-center justify-center flex-col h-full gap-5'>

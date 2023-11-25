@@ -13,7 +13,7 @@ export type Prize = {
     awardYear:string,
     category:Translation,
     categoryFullName:Translation,
-    dateAwarded:Date,
+    dateAwarded:string,
     prizeAmount:number,
     prizeAmountAdjusted:number,
     links:PrizeLink,
