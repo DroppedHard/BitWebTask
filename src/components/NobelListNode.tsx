@@ -1,6 +1,5 @@
 import NobelController from "../data/NobelController";
 import { NobelListNodeFields } from "../interfaces/ComponentInterface";
-import { Translation } from "../interfaces/DataInterface";
 
 
 export default function NobelListNode({ info }: NobelListNodeFields) {

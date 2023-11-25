@@ -1,4 +1,4 @@
-import { Prize, Translation, TranslationSelect } from "../interfaces/DataInterface";
+import { Prize, TranslationSelect } from "../interfaces/DataInterface";
 import DataService from "./DataService";
 
 export default class NobelController {

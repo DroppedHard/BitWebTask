@@ -16,24 +16,21 @@ export default function NobelList() {
       await NobelController.fetchData()
       if (year) {
         setNobels(NobelController.getNobelsInYear(year))
-        console.log("XDD", filteredNobels, nobels)
         setFilteredNobels(nobels)
       } else {
         alert("ERROR - Year is undefined")
         return navigate('/')
       }
     }
-    getData().then(() => {
-      console.log("Fetched", filteredNobels, nobels)
-    })
+    getData()
   }, [nobels.length])
    
   useEffect(() => {
     setFilteredNobels(nobels.filter((nobel:Prize) => {
-      console.log(nobel.categoryFullName[NobelController.lang].includes(categoryFilter), nobel.categoryFullName[NobelController.lang], categoryFilter)
+      // console.log(nobel.categoryFullName[NobelController.lang].includes(categoryFilter), nobel.categoryFullName[NobelController.lang], categoryFilter)
       return nobel.categoryFullName[NobelController.lang].includes(categoryFilter)
     }))
-    console.log(nobels, filteredNobels)
+    // console.log(nobels, filteredNobels)
   }, [categoryFilter])
 
   return (
