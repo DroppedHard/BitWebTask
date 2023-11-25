@@ -1,6 +1,7 @@
 import { MouseEventHandler } from "react"
+import { Prize } from "./DataInterface"
 
-export type ButtonFields = {
+export type StylizedButtonFields = {
     content:string,
     bgColor:string,
     bgColorHover:string,
@@ -12,4 +13,8 @@ export type ButtonFields = {
 export type MultiRangedSlideFields = {
     min:number,
     max:number,
+}
+
+export type NobelListNodeFields = {
+    info:Prize,
 }
